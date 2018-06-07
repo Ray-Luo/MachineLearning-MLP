@@ -6,12 +6,12 @@
 ![Class diagram](https://github.com/Ray-Luo/MachineLearning-MLP/blob/master/ClassDiagram.jpg?raw=true)
 
 ### 3. How to use it?
-*Declare a MLP object
+* Declare a MLP object
 ```
 mlp = MLP()
 ```
 
-*input and target data
+* Input and target data
 ```
 x = np.linspace(0,1,40).reshape((40,1))
 x = (x-0.5)*2
@@ -24,7 +24,7 @@ testtarget = y[1::4,:]
 validtarget = y[3::4,:]
 ```
 
-*Declare layers
+* Declare layers
 ```
 X = Layer(value = train)
 target = Layer(value = traintarget)
@@ -34,7 +34,7 @@ h3 = Layer(rows = X.rows, cols = 1)        # 3rd hidden layer
 output = Layer(rows = X.rows, cols = target.cols)
 ```
 
-*Connect layers
+* Connect layers
 ```
 X.connect(h1)
 h1.connect(h2)
@@ -42,7 +42,7 @@ h2.connect(h3)
 h3.connect(output)
 ```
 
-*Add layers to MLP and train
+* Add layers to MLP and train
 ```
 mlp.addLayers([X, h1,
                h2,
@@ -51,7 +51,7 @@ mlp.addLayers([X, h1,
 mlp.train()
 ```
 
-*Predict
+* Predict
 ```
 test_x = np.ones((1,1))
 output = mlp.predict(x=test_x)
